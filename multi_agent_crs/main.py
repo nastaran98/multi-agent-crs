@@ -6,7 +6,6 @@ import pandas as pd
 from multi_agent_crs.utils import set_config, process_data, load_testset
 from multi_agent_crs.graph import create_graph
 
-from multi_agent_crs.query_databse import query_database_agent
 
 if __name__ == '__main__':
     config = set_config()
@@ -34,9 +33,8 @@ if __name__ == '__main__':
     # task = """
     #     <user>میخوام برای همسرم کتاب بخرم. چه پیشنهادی داری؟
     # """
-
     ########################################################
-    # app = create_graph()
+    app = create_graph()
     # testset = load_testset(config)
     # results = []
     # for i, r in testset.iterrows():
@@ -59,8 +57,10 @@ if __name__ == '__main__':
     # results_df = pd.DataFrame(results, columns=['Task', 'Responses'])
     # results_df.to_csv(config['results_path'], encoding='utf-8-sig')
     ########################################################
-
-    df = pd.read_csv('E://Master/Thesis/nastaran multi agent crs/datasets/books.csv', encoding='utf-8')
-    query_database_agent(df, config)
-
-
+    task = """
+    chat history: <user> صادق هدایت خیلی عجیبه. من بوف کور رو ازش خوندم افتضاح بود. اصلا خوشم نیومد. یه کتاب خوب داری ؟
+    """
+    for s in app.stream({"task": task, "config": config, 'profile': ''}):
+        response_data = {k: v for k, v in s.items() if k != 'config'}
+        print(response_data)
+        print('*' * 20)

@@ -14,12 +14,12 @@ def get_next_action(state):
     config = state['config']
     task = state["task"]
     planner = action_predictor_agent(config)
-    result = planner.invoke({"task": task})
+    # result = planner.invoke({"task": task})
 
     # Extract the dictionary-like JSON structure
     action_list = ['recommend_item_to_user', 'ask_clarification_question', 'recommend_items', 'chit-chat', 'provide_features']
-    for action in action_list:
-        if action in result.content:
-            return {"action_": action}
+    # for action in action_list:
+    #     if action in result.content:
+    #         return {"action_": action}
         
-    return {"action_": ""}
+    return {"action_": "recommend_item_to_user"}

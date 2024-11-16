@@ -9,4 +9,4 @@ class ReWOO(TypedDict):
     steps: List
     results: dict
     result: str
-    action_: str
+    profile: str

@@ -14,6 +14,6 @@ def solve(state: ReWOO):
             tool_input = tool_input.replace(k, v)
             step_name = step_name.replace(k, v)
         plan += f"Plan: {_plan}\n{step_name} = {tool}[{tool_input}]"
-    prompt = solve_prompt.format(plan=plan, task=state["task"], action_= state["action_"])
+    prompt = solve_prompt.format(plan=plan, task=state["task"])
     result = model.invoke(prompt)
     return {"result": result.content}
