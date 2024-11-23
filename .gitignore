@@ -2,3 +2,6 @@
 configs/
 chroma_db/
 datasets/
+results/
+plan_test_dataset_generation/      
+multi_agent_crs/books.db

@@ -25,8 +25,9 @@ def get_plan(state):
     config = state['config']
     regex_pattern = r"Plan\s*\d*:\s*(.+?)\s*#(E\d+)\s*=\s*(\w+)\[([^\]]+)\]"
     task = state["task"]
+    profile = state["profile"]
     planner = planner_agent(config)
-    result = planner.invoke({"task": task})
+    result = planner.invoke({"task": task, 'profile': profile})
     # formatted_plan_string = pattern.sub(reformat_step, result.content)
     matches = re.findall(regex_pattern, result.content)
     return {"steps": matches, "plan_string": result.content}
