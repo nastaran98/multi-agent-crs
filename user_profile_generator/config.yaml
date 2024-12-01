@@ -1,0 +1,79 @@
+OPENAI_API_KEY: "sk-SKw0zSp3P9g3XQ88-B2RkHLr0Airq0S0Zroem4nAtnT3BlbkFJpI-fAAyC4Zl0wEihWD-iSsUoRbPFX3qYQVQ2UrSyQA"
+dataset_path: "E://Master/Thesis/nastaran multi agent crs/plan_test_dataset_generation/short_dialogues.csv"
+profile_generator_agent:
+  model: 'gpt-4o'
+  prompt: 'You are a user profile generator. Your task is to generate profile for "Books". The user favourite genres, authors,  books, topics, books disliked, liked, in the list of reading, etc.
+  Generate 20 user profiles who are intrested in books written after 2000 in the format of python list of dict with english keys and persian values.
+  '
+
+examples:
+  - favorite_genres: رمان‌های عاشقانه، درام
+    favorite_authors: جین آستن، نادر ابراهیمی
+    favorite_books: غرور و تعصب، چهل نامه کوتاه به همسرم
+    interesting_topics: عشق و رابطه، تاریخچه روابط انسانی
+    reading_list: کتاب قمارباز داستایفسکی
+    disliked_books: داستان‌های ترسناک
+
+  - favorite_genres: علمی-تخیلی، فانتزی
+    favorite_authors: آیزاک آسیموف، جی. آر. آر. تالکین
+    favorite_books: بنیاد، ارباب حلقه‌ها
+    interesting_topics: آینده‌نگری، جهان‌های خیالی
+    reading_list: تلماسه اثر فرانک هربرت
+    disliked_books: رمان‌های واقع‌گرایانه
+
+  - favorite_genres: تاریخی، فلسفی
+    favorite_authors: ویل دورانت، شمس تبریزی
+    favorite_books: تاریخ تمدن، مقالات شمس
+    interesting_topics: معنویت، تاریخ و تمدن
+    reading_list: انسان خردمند اثر یووال نوح هراری
+    disliked_books: آثار کم‌عمق و سطحی
+
+  - favorite_genres: داستان‌های جنایی، معمایی
+    favorite_authors: آگاتا کریستی، ژرژ سیمنون
+    favorite_books: قتل در قطار سریع‌السیر شرق، مایگره و مرد مرده
+    interesting_topics: راز و رمز، عدالت و قانون
+    reading_list: دختر قطار اثر پائولا هاوکینز
+    disliked_books: ادبیات رومانتیک
+
+  - favorite_genres: شعر، ادبیات کلاسیک
+    favorite_authors: حافظ، مولانا
+    favorite_books: دیوان حافظ، مثنوی معنوی
+    interesting_topics: عرفان، عشق الهی
+    reading_list: گلستان سعدی
+    disliked_books: آثار مدرن بدون عمق
+
+  - favorite_genres: توسعه فردی، روانشناسی
+    favorite_authors: رابین شارما، جردن پیترسون
+    favorite_books: باشگاه پنج صبحی‌ها، ۱۲ قانون زندگی
+    interesting_topics: انگیزه، رشد شخصی
+    reading_list: هنر شفاف اندیشیدن اثر رولف دوبلی
+    disliked_books: فلسفه‌های پیچیده و انتزاعی
+
+  - favorite_genres: سفرنامه، بیوگرافی
+    favorite_authors: مارکو پولو، ناصر خسرو
+    favorite_books: سفرنامه مارکو پولو، سفرنامه ناصر خسرو
+    interesting_topics: کاوش، سفر به جهان
+    reading_list: زندگی‌نامه نلسون ماندلا
+    disliked_books: آثار علمی-تخیلی
+
+  - favorite_genres: ادبیات کودک، فانتزی
+    favorite_authors: رولد دال، جی. کی. رولینگ
+    favorite_books: ماتیلدا، هری پاتر و سنگ جادو
+    interesting_topics: ماجراجویی، تخیل
+    reading_list: سرزمین عجایب اثر لوئیس کارول
+    disliked_books: ادبیات خشک و جدی
+
+  - favorite_genres: سیاسی، اجتماعی
+    favorite_authors: نوام چامسکی، حسین بشیریه
+    favorite_books: قدرت و ایدئولوژی، تاریخ اندیشه سیاسی
+    interesting_topics: تحلیل قدرت، جنبش‌های اجتماعی
+    reading_list: عصر سرمایه اثر اریک هابسبام
+    disliked_books: داستان‌های خیالی
+
+  - favorite_genres: ادبیات معاصر، طنز
+    favorite_authors: صادق هدایت، اریک امانوئل اشمیت
+    favorite_books: بوف کور، مهمان‌سرای دو دنیا
+    interesting_topics: دیدگاه‌های متفاوت زندگی، طنز تلخ
+    reading_list: جهان هولوگرافیک اثر مایکل تالبوت
+    disliked_books: شعر کلاسیک
+

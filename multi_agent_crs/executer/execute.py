@@ -5,6 +5,7 @@ from multi_agent_crs.search_agent import create_search_agent
 from multi_agent_crs.analyser_agent import analyser_agent
 from multi_agent_crs.answer_generator import answer_generator
 from multi_agent_crs.user_profile_agent import user_profile_agent
+from multi_agent_crs.ask_clarification import ask_clarification
 
 def get_current_task(state: ReWOO):
     if "results" not in state or state["results"] is None:
@@ -41,6 +42,9 @@ def tool_execution(state: ReWOO):
         result = tool.search({"query": tool_input})
     elif tool == "answer_generator":
         tool = answer_generator(config)
+        result = tool.invoke({"tool_input": tool_input, 'task': task})
+    elif tool == "ask_clarification":
+        tool = ask_clarification(config)
         result = tool.invoke({"tool_input": tool_input, 'task': task})
     elif tool == "user_profile":
         tool = user_profile_agent(config)
